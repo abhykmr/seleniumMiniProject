@@ -22,7 +22,7 @@ public class ToolsQATesting {
 			// step-1 Launch the browser
 			driver = DriverManager.getDriver("edge"); // provide either chrome or edge
 
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			// maximize the browser window
 			driver.manage().window().maximize();
 			driver.get(baseUrl);

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testNGapproach.TestCode">
+      <class name="pomWithPf.InvokeTest">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="fillPracticeForm"/>
+          <include name="generateAlert"/>
+          <include name="closeBrowser"/>
+          <include name="browserSetup"/>
         </methods>
-      </class> <!-- testNGapproach.TestCode -->
+      </class> <!-- pomWithPf.InvokeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

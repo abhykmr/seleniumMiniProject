@@ -19,7 +19,7 @@ public class JSExecute {
         try {
             // Step 1: Launch the browser
             driver = DriverManager.getDriver("chrome");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
             driver.manage().window().maximize();
             driver.get(baseUrl);
 
