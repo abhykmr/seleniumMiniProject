@@ -12,6 +12,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
+
+//import com.beust.jcommander.Parameters;
 
 public class TestCode {
 	WebDriver driver;
@@ -20,8 +23,9 @@ public class TestCode {
 	WebDriverWait wait;
 
 	@BeforeClass
-	public void setUp() {
-		driver = DriverSetup.getDriver("chrome");
+	@Parameters({"browser"})
+	public void setUp(String br) {
+		driver = DriverSetup.getDriver(br);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		js = (JavascriptExecutor) driver;
@@ -80,7 +84,6 @@ public class TestCode {
 
 		if (close.isDisplayed()) {
 			System.out.println("Test Passed");
-			Thread.sleep(3000);
 			js.executeScript("arguments[0].click();", close);
 		} else {
 			System.out.println("Failed!");

@@ -5,7 +5,7 @@
     <classes>
       <class name="pomWithPf.InvokeTest">
         <methods>
-          <include name="generateAlert"/>
+          <include name="submitForm"/>
           <include name="closeBrowser"/>
           <include name="browserSetup"/>
         </methods>

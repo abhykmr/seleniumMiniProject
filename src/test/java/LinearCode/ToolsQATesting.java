@@ -22,7 +22,7 @@ public class ToolsQATesting {
 			// step-1 Launch the browser
 			driver = DriverManager.getDriver("edge"); // provide either chrome or edge
 
-//			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			// maximize the browser window
 			driver.manage().window().maximize();
 			driver.get(baseUrl);
@@ -83,8 +83,13 @@ public class ToolsQATesting {
 			driver.findElement(By.id("userNumber")).sendKeys("9876543234");
 			WebElement dateInput = driver.findElement(By.id("dateOfBirthInput"));
 			js.executeScript("arguments[0].value='2025-06-07';", dateInput);
-			driver.findElement(By.id("subjectsInput")).sendKeys("Math");
-			actions.moveToElement(driver.findElement(By.xpath("//div[text()='Math']"))).click().perform();
+			driver.findElement(By.id("subjectsInput")).sendKeys("Mat");
+//			driver.findElement(By.xpath("//*[contains(text(), 'Maths')]/parent::*")).click();
+			WebElement element = driver.findElement(By.xpath("//*[contains(text(), 'Maths')]/parent::*"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			element.click();
+
+//			actions.moveToElement(driver.findElement(By.xpath("//div[text()='Math']"))).click().perform();
 
 //      		driver.findElement(By.xpath("")).click();
 //      		driver.findElement(By.xpath("//label[@for='hobbies-checkbox-1']")).click();
@@ -100,6 +105,12 @@ public class ToolsQATesting {
 //      		actions.moveToElement(driver.findElement(By.xpath("//div[text()='NCR']"))).click().perform();
 //      		driver.findElement(By.xpath("//*[@id=\"react-select-4-input\"]")).sendKeys("Delhi");
 //      		actions.moveToElement(driver.findElement(By.xpath("//div[text()='Delhi']"))).click().perform();
+			driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]")).click();
+			driver.findElement(By.xpath("//*[contains(text(), 'NCR')]")).click();
+//			driver.findElement(By.xpath("text()='NCR'")).click();
+			
+			driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[1]")).click();
+			driver.findElement(By.xpath("//*[contains(text(), 'Delhi')]")).click();
 			WebElement submit = driver.findElement(By.id("submit"));
 			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", submit);
 			submit.click();
@@ -112,9 +123,9 @@ public class ToolsQATesting {
 
 			if (close.isDisplayed()) {
 				System.out.println("Test Passed");
-				js.executeScript("arguments[0].click();", close);
-				driver.navigate().to(baseUrl);
-				driver.quit();
+//				js.executeScript("arguments[0].click();", close);
+//				driver.navigate().to(baseUrl);
+//				driver.quit();
 			} else {
 				System.out.println("Failed!");
 				driver.quit();

@@ -12,6 +12,7 @@ public class InvokeTest {
 	String baseUrl = "https://demoqa.com";
 	AlertPage alertPage;
 	HomePage homePage;
+	FormPage formPage;
 
 	@BeforeClass
 	public void browserSetup() {
@@ -20,6 +21,7 @@ public class InvokeTest {
 		driver.get(baseUrl);
 		alertPage = new AlertPage(driver);
 		homePage = new HomePage(driver);
+		formPage = new FormPage(driver);
 	}
 	
 	@Test(priority=1)
@@ -30,7 +32,11 @@ public class InvokeTest {
 		
 	}
 	
-	
+	@Test(priority=2)
+	public void submitForm() {
+		driver.navigate().to("https://demoqa.com/automation-practice-form");
+		formPage.sendName();
+	}
 	
 	
 	@AfterClass
