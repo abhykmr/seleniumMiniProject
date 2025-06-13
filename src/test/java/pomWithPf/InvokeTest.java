@@ -16,7 +16,7 @@ public class InvokeTest {
 
 	@BeforeClass
 	public void browserSetup() {
-		driver = WebDriverManager.getDriver("chrome");
+		driver = WebDriverManager.getDriver("edge");
 		driver.manage().window().maximize();
 		driver.get(baseUrl);
 		alertPage = new AlertPage(driver);
@@ -35,7 +35,27 @@ public class InvokeTest {
 	@Test(priority=2)
 	public void submitForm() {
 		driver.navigate().to("https://demoqa.com/automation-practice-form");
-		formPage.sendName();
+		 formPage.sendFirstName("Abhay");
+	        formPage.sendLastName("Kumar");
+	        formPage.sendEmail("abhay@gmail.com");
+
+	        formPage.selectGender();
+	        formPage.sendPhoneNumber("9876543234");
+	        formPage.sendDateOfBirth("2025-06-07");
+
+	        formPage.sendSubject("Mat");
+
+	        formPage.selectHobby();
+	        formPage.uploadFile("C:\\Users\\2403953\\Downloads\\Day-47.txt");
+
+	        formPage.sendAddress("Ranchi");
+
+	        formPage.selectState("NCR");
+	        formPage.selectCity("Delhi");
+
+	        formPage.submitForm();
+	        formPage.closeModal("https://demoqa.com");
+		
 	}
 	
 	

@@ -21,6 +21,7 @@ public class TestCode {
 	JavascriptExecutor js;
 	Actions actions;
 	WebDriverWait wait;
+	String baseUrl = "https://demoqa.com/";
 
 	@BeforeClass
 	@Parameters({"browser"})
@@ -31,7 +32,7 @@ public class TestCode {
 		js = (JavascriptExecutor) driver;
 		actions = new Actions(driver);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		driver.get("https://demoqa.com/");
+		driver.get(baseUrl);
 	}
 	
 
@@ -63,10 +64,12 @@ public class TestCode {
 		js.executeScript("document.getElementById('userNumber').value='9876543234';");
 		WebElement dateInput = driver.findElement(By.id("dateOfBirthInput"));
 		js.executeScript("arguments[0].value='2025-06-07';", dateInput);
+		
+		 driver.findElement(By.id("subjectsInput")).sendKeys("Mat");
+			WebElement element = driver.findElement(By.xpath("//*[contains(text(), 'Maths')]/parent::*"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			element.click();
 
-//		WebElement subjectsInput = driver.findElement(By.id("subjectsInput"));
-//		js.executeScript("arguments[0].value='Math';", subjectsInput);
-//		actions.moveToElement(driver.findElement(By.xpath("//div[text()='Math']"))).click().perform();
 
 		WebElement hobbiesCheckbox = driver.findElement(By.id("hobbies-checkbox-1"));
 		js.executeScript("arguments[0].click();", hobbiesCheckbox);
@@ -74,6 +77,14 @@ public class TestCode {
 		driver.findElement(By.id("uploadPicture")).sendKeys("C:\\Users\\2403953\\Downloads\\Day-47.txt");
 
 		js.executeScript("document.getElementById('currentAddress').value='Ranchi';");
+
+		
+		driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]")).click();
+		driver.findElement(By.xpath("//*[contains(text(), 'NCR')]")).click();
+//	
+		
+		driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[1]")).click();
+		driver.findElement(By.xpath("//*[contains(text(), 'Delhi')]")).click();
 
 		WebElement submit = driver.findElement(By.id("submit"));
 		js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", submit);
@@ -85,6 +96,7 @@ public class TestCode {
 		if (close.isDisplayed()) {
 			System.out.println("Test Passed");
 			js.executeScript("arguments[0].click();", close);
+			driver.navigate().to(baseUrl);
 		} else {
 			System.out.println("Failed!");
 		}
@@ -93,7 +105,7 @@ public class TestCode {
 	@AfterClass
 	public void tearDown() {
 		if (driver != null) {
-			driver.quit();
+//			driver.quit();
 		}
 	}
 

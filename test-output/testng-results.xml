@@ -2,28 +2,35 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-12T15:01:51 IST" name="Default suite" finished-at="2025-06-12T15:02:03 IST" duration-ms="12137">
+  <suite started-at="2025-06-13T15:39:30 IST" name="Suite" finished-at="2025-06-13T15:39:42 IST" duration-ms="11958">
     <groups>
     </groups>
-    <test started-at="2025-06-12T15:01:51 IST" name="Default test" finished-at="2025-06-12T15:02:03 IST" duration-ms="12137">
-      <class name="pomWithPf.InvokeTest">
-        <test-method is-config="true" signature="browserSetup()[pri:0, instance:pomWithPf.InvokeTest@7eac9008]" started-at="2025-06-12T15:01:51 IST" name="browserSetup" finished-at="2025-06-12T15:02:00 IST" duration-ms="9541" status="PASS">
+    <test started-at="2025-06-13T15:39:30 IST" name="Test" finished-at="2025-06-13T15:39:42 IST" duration-ms="11958">
+      <class name="testNGapproach.TestCode">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:testNGapproach.TestCode@15de0b3c]" started-at="2025-06-13T15:39:30 IST" name="setUp" finished-at="2025-06-13T15:39:39 IST" duration-ms="8293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- browserSetup -->
-        <test-method signature="generateAlert()[pri:1, instance:pomWithPf.InvokeTest@7eac9008]" started-at="2025-06-12T15:02:00 IST" name="generateAlert" finished-at="2025-06-12T15:02:01 IST" duration-ms="511" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="navigateToAlertsSection()[pri:1, instance:testNGapproach.TestCode@15de0b3c]" started-at="2025-06-13T15:39:39 IST" name="navigateToAlertsSection" finished-at="2025-06-13T15:39:39 IST" duration-ms="465" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- generateAlert -->
-        <test-method signature="submitForm()[pri:2, instance:pomWithPf.InvokeTest@7eac9008]" started-at="2025-06-12T15:02:01 IST" name="submitForm" finished-at="2025-06-12T15:02:03 IST" duration-ms="2014" status="PASS">
+        </test-method> <!-- navigateToAlertsSection -->
+        <test-method signature="fillPracticeForm()[pri:2, instance:testNGapproach.TestCode@15de0b3c]" started-at="2025-06-13T15:39:39 IST" name="fillPracticeForm" finished-at="2025-06-13T15:39:42 IST" duration-ms="3114" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitForm -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:pomWithPf.InvokeTest@7eac9008]" started-at="2025-06-12T15:02:03 IST" name="closeBrowser" finished-at="2025-06-12T15:02:03 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- fillPracticeForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testNGapproach.TestCode@15de0b3c]" started-at="2025-06-13T15:39:42 IST" name="tearDown" finished-at="2025-06-13T15:39:42 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- pomWithPf.InvokeTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- tearDown -->
+      </class> <!-- testNGapproach.TestCode -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

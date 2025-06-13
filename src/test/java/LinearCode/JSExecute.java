@@ -51,12 +51,10 @@ public class JSExecute {
 
             js.executeScript("document.getElementById('userNumber').value='9876543234';");
             js.executeScript("document.getElementById('dateOfBirthInput').value='07 Jun 2025';");
-
-            WebElement subjectInput = driver.findElement(By.id("subjectsInput"));
-            js.executeScript("arguments[0].value='Math';", subjectInput);
-           
-//            WebElement mathOption = driver.findElement(By.xpath("//div[text()='Math']"));
-//            js.executeScript("arguments[0].click();", mathOption);
+            driver.findElement(By.id("subjectsInput")).sendKeys("Mat");
+			WebElement element = driver.findElement(By.xpath("//*[contains(text(), 'Maths')]/parent::*"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			element.click();
 
             WebElement hobbiesCheckbox = driver.findElement(By.id("hobbies-checkbox-1"));
             js.executeScript("arguments[0].click();", hobbiesCheckbox);
@@ -66,18 +64,12 @@ public class JSExecute {
 
             js.executeScript("document.getElementById('currentAddress').value='Ranchi';");
 
-            // Selecting State and City using JS by triggering input and choosing options
-//            WebElement stateInput = driver.findElement(By.id("react-select-3-input"));
-//            js.executeScript("arguments[0].value='NCR'; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));", stateInput);
-//            
-//            WebElement stateOption = driver.findElement(By.xpath("//div[text()='NCR']"));
-//            js.executeScript("arguments[0].click();", stateOption);
-//
-//            WebElement cityInput = driver.findElement(By.id("react-select-4-input"));
-//            js.executeScript("arguments[0].value='Delhi'; arguments[0].dispatchEvent(new Event('input', { bubbles: true }));", cityInput);
-//            Thread.sleep(1000);
-//            WebElement cityOption = driver.findElement(By.xpath("//div[text()='Delhi']"));
-//            js.executeScript("arguments[0].click();", cityOption);
+            driver.findElement(By.xpath("//*[@id=\"state\"]/div/div[1]")).click();
+			driver.findElement(By.xpath("//*[contains(text(), 'NCR')]")).click();
+//		
+			
+			driver.findElement(By.xpath("//*[@id=\"city\"]/div/div[1]")).click();
+			driver.findElement(By.xpath("//*[contains(text(), 'Delhi')]")).click();
 
             // Submit
             WebElement submit = driver.findElement(By.id("submit"));
@@ -93,7 +85,7 @@ public class JSExecute {
                 Thread.sleep(3000);
                 js.executeScript("arguments[0].click();", close);
                 driver.navigate().to(baseUrl);
-                driver.quit();
+//                driver.quit();
             } else {
                 System.out.println("Failed!");
                 driver.quit();
