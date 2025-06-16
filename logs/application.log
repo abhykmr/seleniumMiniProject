@@ -1,0 +1,14 @@
+2025-06-16 10:59:37 [main] INFO  LinearCode.ToolsQATesting - Initializing WebDriver...
+2025-06-16 10:59:46 [main] INFO  LinearCode.ToolsQATesting - Navigated to https://demoqa.com/
+2025-06-16 10:59:46 [main] INFO  LinearCode.ToolsQATesting - Clicked on 'Alerts' section
+2025-06-16 10:59:46 [main] INFO  LinearCode.ToolsQATesting - Clicked on 'Alerts' tab
+2025-06-16 10:59:46 [main] INFO  LinearCode.ToolsQATesting - Accepted alert
+2025-06-16 10:59:48 [main] INFO  LinearCode.ToolsQATesting - Navigated to Automation Practice Form
+2025-06-16 10:59:48 [main] INFO  LinearCode.ToolsQATesting - Filled user details in form
+2025-06-16 10:59:48 [main] INFO  LinearCode.ToolsQATesting - Selected date: 10 Jun 2025
+2025-06-16 10:59:49 [main] INFO  LinearCode.ToolsQATesting - Selected subject 'Maths'
+2025-06-16 10:59:49 [main] INFO  LinearCode.ToolsQATesting - Uploaded file and selected hobby
+2025-06-16 10:59:49 [main] INFO  LinearCode.ToolsQATesting - Selected state and city
+2025-06-16 10:59:49 [main] INFO  LinearCode.ToolsQATesting - Form submitted
+2025-06-16 10:59:49 [main] INFO  LinearCode.ToolsQATesting - Test Passed
+2025-06-16 10:59:51 [main] INFO  LinearCode.ToolsQATesting - Browser closed

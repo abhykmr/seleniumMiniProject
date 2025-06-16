@@ -62,8 +62,12 @@ public class TestCode {
 		js.executeScript("arguments[0].click();", gender);
 
 		js.executeScript("document.getElementById('userNumber').value='9876543234';");
-		WebElement dateInput = driver.findElement(By.id("dateOfBirthInput"));
-		js.executeScript("arguments[0].value='2025-06-07';", dateInput);
+		WebElement dateInput = driver.findElement(By.cssSelector(".react-datepicker__input-container input"));
+		js.executeScript("arguments[0].scrollIntoView(true);", dateInput);
+		dateInput.click();
+		String date = "10 Jun 2025";
+		js.executeScript("arguments[0].value = '';", dateInput);
+		dateInput.sendKeys(date);
 		
 		 driver.findElement(By.id("subjectsInput")).sendKeys("Mat");
 			WebElement element = driver.findElement(By.xpath("//*[contains(text(), 'Maths')]/parent::*"));
@@ -95,8 +99,8 @@ public class TestCode {
 
 		if (close.isDisplayed()) {
 			System.out.println("Test Passed");
-			js.executeScript("arguments[0].click();", close);
-			driver.navigate().to(baseUrl);
+//			js.executeScript("arguments[0].click();", close);
+//			driver.navigate().to(baseUrl);
 		} else {
 			System.out.println("Failed!");
 		}
